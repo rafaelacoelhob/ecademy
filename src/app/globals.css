@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-navy:        #0D1B2A;
+  --color-navy-light:  #0F2236;
+  --color-navy-mid:    #091d2f;
+  --color-orange:      #F7931E;
+  --color-brand-blue:  #1E88E5;
+  --color-brand-lblue: #A7D8FF;
+  --color-muted:       #8fafc9;
+  --color-muted2:      #b0c4d8;
+
+  --font-sans: var(--font-inter), 'Inter', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0px) rotate(0deg);  }
+  50%       { transform: translateY(-14px) rotate(5deg); }
+}
+@keyframes floatDown {
+  0%, 100% { transform: translateY(0px) rotate(0deg);   }
+  50%       { transform: translateY(-10px) rotate(-4deg); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0D1B2A;
+  color: #fff;
+}
+
+/* Used on the hero section background div */
+.hero-bg {
+  background-image:
+    radial-gradient(ellipse 65% 75% at 25% 55%, rgba(30, 136, 229, 0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 50% at 75% 55%, rgba(247, 147, 30, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 40% at 85% 80%, rgba(30, 136, 229, 0.08) 0%, transparent 50%);
+}
+
+.star-field {
+  background-image:
+    radial-gradient(1.5px 1.5px at 15% 20%,  rgba(167, 216, 255, 0.50) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 35% 12%,  rgba(167, 216, 255, 0.40) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 55%  8%,  rgba(167, 216, 255, 0.50) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 70% 18%,  rgba(167, 216, 255, 0.30) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 88% 10%,  rgba(167, 216, 255, 0.40) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 92% 35%,  rgba(167, 216, 255, 0.40) 0%, transparent 100%),
+    radial-gradient(1px   1px   at  5% 45%,  rgba(167, 216, 255, 0.30) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 22% 60%,  rgba(167, 216, 255, 0.25) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 70%,  rgba(167, 216, 255, 0.30) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 80% 65%,  rgba(167, 216, 255, 0.35) 0%, transparent 100%);
 }
