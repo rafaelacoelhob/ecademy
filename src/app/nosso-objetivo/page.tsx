@@ -62,14 +62,14 @@ const OBJECTIVES = [
 
 export default function NossoObjetivoPage() {
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen pt-16 md:pt-20">
 
       {/* Hero */}
       <div className="relative overflow-hidden border-b border-brand-blue/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_0%,rgba(30,136,229,0.08)_0%,transparent_70%)]" />
-        <div className="relative mx-auto max-w-5xl px-8 py-20 text-center">
+        <div className="relative mx-auto max-w-5xl px-5 md:px-8 py-12 md:py-20 text-center">
           <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-orange" />
-          <h1 className="mb-5 text-5xl font-black leading-tight">
+          <h1 className="mb-5 text-4xl md:text-5xl font-black leading-tight">
             Nosso <span className="text-orange">objetivo</span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted2">
@@ -80,7 +80,7 @@ export default function NossoObjetivoPage() {
       </div>
 
       {/* Objectives */}
-      <div className="mx-auto max-w-5xl px-8 py-20">
+      <div className="mx-auto max-w-5xl px-5 md:px-8 py-12 md:py-20">
         <div className="grid gap-6 md:grid-cols-2">
           {OBJECTIVES.map(({ num, title, text, icon }) => (
             <div

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function CursosPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center pt-20">
+    <main className="flex min-h-screen flex-col items-center justify-center pt-16 md:pt-20">
       <div className="text-center px-8">
         <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl border border-orange/30 bg-orange/10">
           <svg viewBox="0 0 40 40" fill="none" className="h-10 w-10">

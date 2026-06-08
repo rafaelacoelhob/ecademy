@@ -13,14 +13,14 @@ export default function ContatoPage() {
   }
 
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen pt-16 md:pt-20">
 
       {/* Hero */}
       <div className="relative overflow-hidden border-b border-brand-blue/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_0%,rgba(30,136,229,0.08)_0%,transparent_70%)]" />
-        <div className="relative mx-auto max-w-5xl px-8 py-20 text-center">
+        <div className="relative mx-auto max-w-5xl px-5 md:px-8 py-12 md:py-20 text-center">
           <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-orange" />
-          <h1 className="mb-5 text-5xl font-black leading-tight">
+          <h1 className="mb-5 text-4xl md:text-5xl font-black leading-tight">
             Entre em <span className="text-orange">contato</span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted2">
@@ -30,7 +30,7 @@ export default function ContatoPage() {
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-5xl gap-10 px-8 py-20 md:grid-cols-[1fr_1.6fr]">
+      <div className="mx-auto grid max-w-5xl gap-8 px-5 md:px-8 py-12 md:py-20 md:grid-cols-[1fr_1.6fr]">
 
         {/* Info column */}
         <div className="flex flex-col gap-6">

@@ -5,7 +5,7 @@ import FloatingSquares from '@/components/FloatingSquares'
 export default function HomePage() {
   return (
     <main>
-      <section className="relative flex min-h-screen flex-col overflow-hidden pt-20">
+      <section className="relative flex min-h-screen flex-col overflow-hidden pt-16 md:pt-20">
 
         {/* Radial gradients + star dots */}
         <div className="hero-bg star-field pointer-events-none absolute inset-0" />
@@ -13,15 +13,15 @@ export default function HomePage() {
         {/* Animated bg squares */}
         <FloatingSquares />
 
-        {/* ── Two-column grid ─────────────────────────────── */}
-        <div className="relative z-10 mx-auto flex w-full max-w-[1400px] flex-1 items-center px-16">
+        {/* ── Main content ─────────────────────────────── */}
+        <div className="relative z-10 mx-auto flex w-full max-w-[1400px] flex-1 flex-col lg:flex-row items-center gap-6 lg:gap-0 px-5 md:px-10 lg:px-16 py-8 lg:py-0">
 
           {/* LEFT – mascot + floating deco icons */}
-          <div className="relative flex h-[600px] flex-1 items-end justify-center">
+          <div className="relative flex h-[300px] md:h-[420px] lg:h-[600px] w-full max-w-[380px] md:max-w-[480px] lg:max-w-none lg:flex-1 items-end justify-center">
 
-            {/* Deco: Laptop </> */}
+            {/* Deco icons – hidden on mobile */}
             <div
-              className="absolute left-2.5 top-20 z-[4]"
+              className="absolute left-2.5 top-20 z-[4] hidden lg:block"
               style={{ animation: 'floatUp 5s ease-in-out 0s infinite' }}
             >
               <svg width="96" height="74" viewBox="0 0 96 74" fill="none">
@@ -35,9 +35,8 @@ export default function HomePage() {
               </svg>
             </div>
 
-            {/* Deco: Lightbulb */}
             <div
-              className="absolute left-7 top-48 z-[4]"
+              className="absolute left-7 top-48 z-[4] hidden lg:block"
               style={{ animation: 'floatUp 4s ease-in-out 0.8s infinite' }}
             >
               <svg width="60" height="72" viewBox="0 0 60 72" fill="none">
@@ -54,9 +53,8 @@ export default function HomePage() {
               </svg>
             </div>
 
-            {/* Deco: Open book */}
             <div
-              className="absolute right-7 top-14 z-[4]"
+              className="absolute right-7 top-14 z-[4] hidden lg:block"
               style={{ animation: 'floatDown 6s ease-in-out 1.2s infinite' }}
             >
               <svg width="74" height="58" viewBox="0 0 74 58" fill="none">
@@ -81,9 +79,8 @@ export default function HomePage() {
                 width={600}
                 height={660}
                 priority
-                className="h-[600px] w-auto object-contain object-bottom"
+                className="h-[300px] md:h-[420px] lg:h-[600px] w-auto object-contain object-bottom"
               />
-              {/* Overlay que cobre o fundo da imagem com a cor exata do hero */}
               <div
                 className="pointer-events-none absolute inset-0"
                 style={{
@@ -95,20 +92,20 @@ export default function HomePage() {
           </div>
 
           {/* RIGHT – copy */}
-          <div className="flex-1 pl-12">
-            <h1 className="mb-5 text-[62px] font-black leading-[1.12] tracking-[-1.5px]">
+          <div className="flex-1 text-center lg:text-left lg:pl-12">
+            <h1 className="mb-4 text-[36px] md:text-[50px] lg:text-[62px] font-black leading-[1.12] tracking-[-1.5px]">
               Aprender é<br />
               explorar o<br />
               <span className="text-orange">mundo.</span>
             </h1>
 
-            <p className="mb-9 max-w-[400px] text-lg leading-[1.65] text-muted2">
-              Educação criativa, acessível e envolvente<br />
+            <p className="mb-8 mx-auto lg:mx-0 max-w-[400px] text-base md:text-lg leading-[1.65] text-muted2">
+              Educação criativa, acessível e envolvente<br className="hidden md:block" />
               para transformar o futuro.
             </p>
 
             {/* Values row */}
-            <div className="mb-10 flex gap-8">
+            <div className="mb-8 flex flex-wrap justify-center lg:justify-start gap-5 md:gap-8">
               <ValItem label="Criatividade">
                 <svg viewBox="0 0 36 36" fill="none" className="h-9 w-9">
                   <circle cx="18" cy="14" r="9" stroke="#F7931E" strokeWidth="2" fill="rgba(247,147,30,0.12)" />
@@ -161,54 +158,54 @@ export default function HomePage() {
         </div>
 
         {/* ── Bottom feature bar ─────────────────────────── */}
-        <div className="relative z-10 flex justify-center border-t border-brand-blue/20 bg-[rgba(9,22,36,0.88)] px-16">
+        <div className="relative z-10 border-t border-brand-blue/20">
+          <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-px bg-white/[0.06] lg:grid-cols-4">
 
-          <BarItem label={<>Conteúdo de<br />qualidade</>}>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-              <path d="M13 4 L24 9 L13 14 L2 9 Z" stroke="#1E88E5" strokeWidth="1.8" fill="rgba(30,136,229,0.2)" strokeLinejoin="round" />
-              <path d="M6 11 L6 18 C9 21 17 21 20 18 L20 11" stroke="#1E88E5" strokeWidth="1.8" strokeLinecap="round" fill="none" />
-              <line x1="24" y1="9" x2="24" y2="16" stroke="#1E88E5" strokeWidth="1.8" strokeLinecap="round" />
-              <circle cx="24" cy="17.5" r="1.5" fill="#1E88E5" />
-            </svg>
-          </BarItem>
+            <BarItem label={<>Conteúdo de<br />qualidade</>}>
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                <path d="M13 4 L24 9 L13 14 L2 9 Z" stroke="#1E88E5" strokeWidth="1.8" fill="rgba(30,136,229,0.2)" strokeLinejoin="round" />
+                <path d="M6 11 L6 18 C9 21 17 21 20 18 L20 11" stroke="#1E88E5" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+                <line x1="24" y1="9" x2="24" y2="16" stroke="#1E88E5" strokeWidth="1.8" strokeLinecap="round" />
+                <circle cx="24" cy="17.5" r="1.5" fill="#1E88E5" />
+              </svg>
+            </BarItem>
 
-          <BarItem label={<>Aprendizado<br />que conecta</>}>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-              <circle cx="9"  cy="8" r="4" stroke="#1E88E5" strokeWidth="1.8" fill="rgba(30,136,229,0.15)" />
-              <circle cx="18" cy="8" r="4" stroke="#1E88E5" strokeWidth="1.8" fill="rgba(30,136,229,0.15)" />
-              <path d="M2 22 C2 17 5 15 9 15 C11.2 15 12.8 15.8 14 17.2"  stroke="#1E88E5" strokeWidth="1.8" strokeLinecap="round" fill="none" />
-              <path d="M24 22 C24 17 21 15 18 15 C15.8 15 14.2 15.8 13 17.2" stroke="#1E88E5" strokeWidth="1.8" strokeLinecap="round" fill="none" />
-            </svg>
-          </BarItem>
+            <BarItem label={<>Aprendizado<br />que conecta</>}>
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                <circle cx="9"  cy="8" r="4" stroke="#1E88E5" strokeWidth="1.8" fill="rgba(30,136,229,0.15)" />
+                <circle cx="18" cy="8" r="4" stroke="#1E88E5" strokeWidth="1.8" fill="rgba(30,136,229,0.15)" />
+                <path d="M2 22 C2 17 5 15 9 15 C11.2 15 12.8 15.8 14 17.2"  stroke="#1E88E5" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+                <path d="M24 22 C24 17 21 15 18 15 C15.8 15 14.2 15.8 13 17.2" stroke="#1E88E5" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+              </svg>
+            </BarItem>
 
-          <BarItem label={<>Desenvolvimento<br />contínuo</>}>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-              <rect x="3"  y="16" width="5" height="8" rx="1.5" fill="rgba(30,136,229,0.25)" stroke="#1E88E5" strokeWidth="1.8" />
-              <rect x="11" y="11" width="5" height="13" rx="1.5" fill="rgba(30,136,229,0.25)" stroke="#1E88E5" strokeWidth="1.8" />
-              <rect x="19" y="5"  width="5" height="19" rx="1.5" fill="rgba(30,136,229,0.25)" stroke="#1E88E5" strokeWidth="1.8" />
-              <path d="M3 14 L9 10 L16 8 L23 4" stroke="#F7931E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              <circle cx="23" cy="4" r="2" fill="#F7931E" />
-            </svg>
-          </BarItem>
+            <BarItem label={<>Desenvolvimento<br />contínuo</>}>
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                <rect x="3"  y="16" width="5" height="8" rx="1.5" fill="rgba(30,136,229,0.25)" stroke="#1E88E5" strokeWidth="1.8" />
+                <rect x="11" y="11" width="5" height="13" rx="1.5" fill="rgba(30,136,229,0.25)" stroke="#1E88E5" strokeWidth="1.8" />
+                <rect x="19" y="5"  width="5" height="19" rx="1.5" fill="rgba(30,136,229,0.25)" stroke="#1E88E5" strokeWidth="1.8" />
+                <path d="M3 14 L9 10 L16 8 L23 4" stroke="#F7931E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="23" cy="4" r="2" fill="#F7931E" />
+              </svg>
+            </BarItem>
 
-          <BarItem label={<>Preparando hoje<br />líderes do amanhã</>}>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-              <path d="M13 3 C13 3 21 5 21 14 L16.5 19 L9.5 19 L5 14 C5 5 13 3 13 3Z" stroke="#1E88E5" strokeWidth="1.8" fill="rgba(30,136,229,0.15)" />
-              <circle cx="13" cy="11" r="3" stroke="#1E88E5" strokeWidth="1.5" fill="rgba(30,136,229,0.25)" />
-              <path d="M9.5 19 L8 23 L12 21"  stroke="#1E88E5" strokeWidth="1.5" strokeLinejoin="round" fill="none" />
-              <path d="M16.5 19 L18 23 L14 21" stroke="#1E88E5" strokeWidth="1.5" strokeLinejoin="round" fill="none" />
-              <line x1="5"  y1="13" x2="2"  y2="15" stroke="#F7931E" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="21" y1="13" x2="24" y2="15" stroke="#F7931E" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-          </BarItem>
+            <BarItem label={<>Preparando hoje<br />líderes do amanhã</>}>
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                <path d="M13 3 C13 3 21 5 21 14 L16.5 19 L9.5 19 L5 14 C5 5 13 3 13 3Z" stroke="#1E88E5" strokeWidth="1.8" fill="rgba(30,136,229,0.15)" />
+                <circle cx="13" cy="11" r="3" stroke="#1E88E5" strokeWidth="1.5" fill="rgba(30,136,229,0.25)" />
+                <path d="M9.5 19 L8 23 L12 21"  stroke="#1E88E5" strokeWidth="1.5" strokeLinejoin="round" fill="none" />
+                <path d="M16.5 19 L18 23 L14 21" stroke="#1E88E5" strokeWidth="1.5" strokeLinejoin="round" fill="none" />
+                <line x1="5"  y1="13" x2="2"  y2="15" stroke="#F7931E" strokeWidth="1.5" strokeLinecap="round" />
+                <line x1="21" y1="13" x2="24" y2="15" stroke="#F7931E" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            </BarItem>
 
+          </div>
         </div>
       </section>
     </main>
   )
 }
-
-// ── Sub-components (scoped to this page) ──────────────────
 
 function ValItem({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -221,11 +218,11 @@ function ValItem({ label, children }: { label: string; children: React.ReactNode
 
 function BarItem({ label, children }: { label: React.ReactNode; children: React.ReactNode }) {
   return (
-    <div className="flex max-w-[280px] flex-1 items-center gap-[18px] border-r border-white/[0.08] px-7 py-6 last:border-r-0">
-      <div className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-xl border border-brand-blue/25 bg-brand-blue/[0.14]">
+    <div className="flex items-center gap-3 bg-[rgba(9,22,36,0.88)] px-5 py-5 lg:gap-[18px] lg:px-7 lg:py-6">
+      <div className="flex h-10 w-10 lg:h-[46px] lg:w-[46px] shrink-0 items-center justify-center rounded-xl border border-brand-blue/25 bg-brand-blue/[0.14]">
         {children}
       </div>
-      <span className="text-[13.5px] font-medium leading-[1.45] text-muted2">{label}</span>
+      <span className="text-[12.5px] font-medium leading-[1.45] text-muted2">{label}</span>
     </div>
   )
 }

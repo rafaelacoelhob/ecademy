@@ -89,14 +89,14 @@ const VALUES = [
 
 export default function ValoresPage() {
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen pt-16 md:pt-20">
 
       {/* Hero section */}
       <div className="relative overflow-hidden border-b border-brand-blue/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_0%,rgba(30,136,229,0.08)_0%,transparent_70%)]" />
-        <div className="relative mx-auto max-w-5xl px-8 py-20 text-center">
+        <div className="relative mx-auto max-w-5xl px-5 md:px-8 py-12 md:py-20 text-center">
           <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-orange" />
-          <h1 className="mb-5 text-5xl font-black leading-tight">
+          <h1 className="mb-5 text-4xl md:text-5xl font-black leading-tight">
             Nossos <span className="text-orange">valores</span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted2">
@@ -107,7 +107,7 @@ export default function ValoresPage() {
       </div>
 
       {/* Values grid */}
-      <div className="mx-auto max-w-5xl px-8 py-20">
+      <div className="mx-auto max-w-5xl px-5 md:px-8 py-12 md:py-20">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {VALUES.map(({ title, description, icon }) => (
             <div

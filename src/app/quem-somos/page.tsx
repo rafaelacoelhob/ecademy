@@ -39,14 +39,14 @@ const STATS = [
 
 export default function QuemSomosPage() {
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen pt-16 md:pt-20">
 
       {/* Hero */}
       <div className="relative overflow-hidden border-b border-brand-blue/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_0%,rgba(30,136,229,0.08)_0%,transparent_70%)]" />
-        <div className="relative mx-auto max-w-5xl px-8 py-20 text-center">
+        <div className="relative mx-auto max-w-5xl px-5 md:px-8 py-12 md:py-20 text-center">
           <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-orange" />
-          <h1 className="mb-5 text-5xl font-black leading-tight">
+          <h1 className="mb-5 text-4xl md:text-5xl font-black leading-tight">
             Quem <span className="text-orange">somos</span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted2">
@@ -58,19 +58,19 @@ export default function QuemSomosPage() {
       </div>
 
       {/* Stats */}
-      <div className="border-b border-brand-blue/10 bg-white/[0.02]">
-        <div className="mx-auto flex max-w-4xl flex-wrap justify-center divide-x divide-white/[0.08]">
+      <div className="border-b border-brand-blue/10 bg-brand-blue/[0.04]">
+        <div className="mx-auto grid max-w-4xl grid-cols-2 gap-px bg-white/[0.06] md:grid-cols-4">
           {STATS.map(({ value, label }) => (
-            <div key={label} className="flex flex-col items-center px-12 py-10">
-              <span className="text-4xl font-black text-orange">{value}</span>
-              <span className="mt-1 text-sm text-muted">{label}</span>
+            <div key={label} className="flex flex-col items-center bg-navy px-8 py-8 md:px-12 md:py-10">
+              <span className="text-3xl md:text-4xl font-black text-orange">{value}</span>
+              <span className="mt-1 text-center text-sm text-muted">{label}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Cards */}
-      <div className="mx-auto max-w-5xl px-8 py-20">
+      <div className="mx-auto max-w-5xl px-5 md:px-8 py-12 md:py-20">
         <div className="grid gap-6 md:grid-cols-3">
           {CARDS.map(({ num, title, text, border, numColor }) => (
             <div
@@ -85,7 +85,7 @@ export default function QuemSomosPage() {
         </div>
 
         {/* About E-Cademy narrative */}
-        <div className="mt-16 rounded-2xl border border-brand-blue/15 bg-white/[0.02] p-10">
+        <div className="mt-12 md:mt-16 rounded-2xl border border-brand-blue/15 bg-white/[0.02] p-6 md:p-10">
           <h2 className="mb-5 text-3xl font-black">
             Por que a <span className="text-orange">E-Cademy?</span>
           </h2>
