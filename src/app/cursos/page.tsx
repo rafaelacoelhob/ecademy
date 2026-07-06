@@ -188,7 +188,7 @@ export default async function CursosPage() {
                     rel="noopener noreferrer"
                     className="block w-full rounded-full bg-orange py-2.5 text-center text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(247,147,30,0.4)]"
                   >
-                    Inscrever-se →
+                    Baixar material →
                   </a>
                 ) : (
                   <div className="block w-full rounded-full border border-white/10 py-2.5 text-center text-sm font-semibold text-muted">
